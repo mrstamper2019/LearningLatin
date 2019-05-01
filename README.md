@@ -1,5 +1,5 @@
 # LearningLatin
-A is a 'flash card' system for elementary latin students to utilize as they study some basic concepts.
+Learning Latin is a 'flash card' system for elementary latin students to utilize as they study some basic concepts.
 It includes quiz sets for some verbs and nouns. There are sets that go from Latin to English and English to Latin.
 
 The LearningMode allows students to review concepts such as verb conjugation endings, noun declension endings, 
