@@ -1,3 +1,7 @@
+//no longer needed for the project to run, but the code
+//remains as a reminder of how the QuizMode was 
+//previously implemented.
+
 //import java.util.ArrayList;
 import java.util.HashMap;
 //import java.util.Map;
