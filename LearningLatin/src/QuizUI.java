@@ -73,7 +73,7 @@ public class QuizUI extends JFrame {
 		
 		quizType = new JLabel(quizName);		//name of study set goes here
 		quizType.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		quizType.setBounds(252, 25, 143, 27);
+		quizType.setBounds(182, 25, 461, 27);
 		contentPane.add(quizType);
 		
 		urAns = new JTextField("");		//where your answer goes
@@ -154,7 +154,10 @@ public class QuizUI extends JFrame {
 						btnConfirmAnswer.setEnabled(false);
 						urAns.setEditable(false);
 						next.setEnabled(false);
-						btnGoToRelated.setEnabled(true);
+						if(!collection.get(quizName).equals(engNoun) &&
+								!collection.get(quizName).equals(engVerb) ) {
+							btnGoToRelated.setEnabled(true);
+						}
 						btnGoBack.setEnabled(true);
 						
 						//parent.setBounds(100, 100, 100, 100);
@@ -200,11 +203,11 @@ public class QuizUI extends JFrame {
 				} else if(collection.get(quizName).equals(irregVerb)) {
 					LearnUI.main("irregular verb");
 				}
-				else {
+				/*else {
 					JFrame parent = new JFrame();
 					JOptionPane.showMessageDialog(parent, "Sorry, that set doesn't exist!");
 
-				}
+				}*/
 				//quiz(quizName);
 			}
 				//String answer = urAns.getText();
@@ -241,19 +244,19 @@ public class QuizUI extends JFrame {
 	private static boolean engToLatin = false;
 	
 	public static void QuizMode() {
-		verb.put("ambulo, ambulare, ambulavi, ambulatum", "walk");
+		verb.put("ambulo, ambulare, ambulavi, ambulatum", "walk, travel");
 		verb.put("amo, amare, amavi, amatus", "love");
-		verb.put("cogito, cogitare, cogitavi, cogitatus", "think");
+		verb.put("cogito, cogitare, cogitavi, cogitatus", "think, consider");
 		verb.put("do, dare, dedi, datus", "give, reward");
 		
 		noun.put("cura, curae", "care");
-		noun.put("ira, irae", "anger");
+		noun.put("ira, irae", "anger, wrath");
 		noun.put("poena, poenae", "punishment");
 		noun.put("sapientia, sapientiae", "wisdom");
 		noun.put("vita, vitae", "life");
-		noun.put("animus, animi", "mind");
+		noun.put("animus, animi", "mind, soul");
 		
-		irregVerb.put("do, dare, dedi, datus", "give");
+		irregVerb.put("do, dare, dedi, datus", "give, reward");
 		irregVerb.put("adfero, adferre, attuli, allatum", "bring");
 		irregVerb.put("confero, conferre, contuli, collatum", "gather");
 		irregVerb.put("eo, ire, ii (ivi), itum", "go");
@@ -263,15 +266,15 @@ public class QuizUI extends JFrame {
 		engVerb.put("walk", "ambulo, ambulare, ambulavi, ambulatum");
 		engVerb.put("love", "amo, amare, amavi, amatus");
 		engVerb.put("think", "cogito, cogitare, cogitavi, cogitatus");
-		engVerb.put("give", "do, dare, dedi, datus");
+		engVerb.put("give, reward", "do, dare, dedi, datus");
 		engVerb.put("reward", "dono, donare, donavi, donatus");
 		
-		engNoun.put("care", "cura, curae");
+		//engNoun.put("care", "cura, curae");
 		engNoun.put("anger", "ira, irae");
-		engNoun.put("punishment", "poena, poenae");
-		engNoun.put("wisdom", "sapientia, sapientiae");
-		engNoun.put("life", "vita, vitae");
-		engNoun.put("mind", "animus, animi");
+		//engNoun.put("punishment", "poena, poenae");
+		//engNoun.put("wisdom", "sapientia, sapientiae");
+		//engNoun.put("life", "vita, vitae");
+		//engNoun.put("mind, soul", "animus, animi");
 
 		collection.put("verb dictionary entries", verb);
 		collection.put("noun declensions", noun);
